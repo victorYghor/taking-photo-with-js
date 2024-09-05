@@ -1,7 +1,21 @@
 const video = document.querySelector('#video')
 const btn = document.querySelector('#btn')
 const canvas =  document.querySelector('#canvas')
-
+const constrain = {
+    video: {
+      width: {
+        min: 1280,
+        ideal: 1920,
+        max: 2560,
+      },
+      height: {
+        min: 720,
+        ideal: 1080,
+        max: 1440
+      },
+      facingMode: 'environment'
+    }
+  }
 if(navigator.mediaDevices.getUserMedia){
     navigator.mediaDevices.getUserMedia({video: true })
     .then(stream => {
